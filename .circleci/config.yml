@@ -10,6 +10,10 @@ jobs:
     macos:
       xcode: "8.3.3"
 
+    branches:
+      only:
+        - develop
+
     steps:
       - checkout
 
