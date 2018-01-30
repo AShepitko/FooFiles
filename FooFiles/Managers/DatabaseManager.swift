@@ -23,10 +23,14 @@ class DatabaseManager {
     
     fileprivate init() {}
 
-    func fetchFile(with id: String) -> Observable<File?> {
-        return mainContext.rx.entities(File.self, predicate: NSPredicate(format: "%K = %@", File.primaryAttributeName, id), sortDescriptors: nil).flatMapFirst({ files in
-            return Observable<File?>.just(files.first)
+    func fetchEntity<T: Persistable>(with type: T.Type, id: String) -> Observable<T?> {
+        return mainContext.rx.entities(T.self, predicate: NSPredicate(format: "%K = %@", T.primaryAttributeName, id), sortDescriptors: nil).flatMapFirst({ entities in
+            return Observable<T?>.just(entities.first)
         })
+    }
+    
+    func fetchAll<T: Persistable>(with type: T.Type) -> Observable<[T]> {
+        return mainContext.rx.entities()
     }
     
     func createOrUpdate<T: Persistable>(entity: T) -> Observable<T> {

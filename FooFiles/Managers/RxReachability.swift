@@ -30,16 +30,10 @@ class RxReachability {
         
         reachability.whenReachable = { reachability in
             RxReachability._connection.value = reachability.connection
-            if reachability.connection == .wifi {
-                print("Reachable via WiFi")
-            } else {
-                print("Reachable via Cellular")
-            }
         }
         
         reachability.whenUnreachable = { _ in
             RxReachability._connection.value = .none
-            print("Not reachable")
         }
         
         do {
@@ -48,7 +42,6 @@ class RxReachability {
             self.reachability = reachability
         }
         catch {
-            print("ERROR: unable to start reachability")
             return false
         }
         return true

@@ -14,40 +14,14 @@ class FilesViewController: UIViewController {
 
     let disposeBag = DisposeBag()
     
+    let viewModel = FilesViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        let filenames = [ "1.txt", "2.txt", "3.txt" ]
-        for filename in filenames {
-            DatabaseManager.shared.fetchFile(with: filename)
-                .filter { $0 == nil }
-                .map { _ in
-                    File(id: filename, remoteUrl: nil, localUrl: nil, name: filename, created: Date())
-                }
-                .flatMap { DatabaseManager.shared.createOrUpdate(entity: $0) }
-                .subscribe(onNext: { file in
-                    print("Created file: \(file.id) - \(file.created!)")
-                })
-                .disposed(by: disposeBag)
-        }
-
-        if !RxReachability.shared.startMonitor(host: "distillery.com") {
-            print("Unable to start monitoring Distillery host")
-        }
-
-        RxReachability.shared.connection.subscribe(onNext: { [unowned self] status in
-            switch status {
-            case .wifi:
-                self.navigationItem.title = "WiFi"
-            case .cellular:
-                self.navigationItem.title = "Cellular"
-            case .none:
-                self.navigationItem.title = "Offline"
-                break
-            }
-        })
-        .disposed(by: disposeBag)
+        viewModel.connectionStatus.asDriver().drive(navigationItem.rx.title).disposed(by: disposeBag)
+        
+        viewModel.startFetching()
     }
 
     override func didReceiveMemoryWarning() {
