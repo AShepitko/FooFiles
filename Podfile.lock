@@ -1,6 +1,7 @@
 PODS:
   - Differentiator (3.0.2)
-  - RxCocoa (4.1.0):
+  - ReachabilitySwift (4.1.0)
+  - RxCocoa (4.1.1):
     - RxSwift (~> 4.0)
   - RxDataSources (3.0.2):
     - Differentiator (~> 3.0)
@@ -9,16 +10,18 @@ PODS:
   - RxSwift (4.1.1)
 
 DEPENDENCIES:
+  - ReachabilitySwift (~> 4.1)
   - RxCocoa (~> 4.1)
   - RxDataSources (~> 3.0)
   - RxSwift (~> 4.1)
 
 SPEC CHECKSUMS:
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
-  RxCocoa: cc1fec49cdc8fabe645964de7c51c099a36c2aa8
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
 
-PODFILE CHECKSUM: 5f58ea7126bbf9e2650d494d06fcf2af6080888c
+PODFILE CHECKSUM: 1025d1a7a59ebad50974d30380f7847491b34d69
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

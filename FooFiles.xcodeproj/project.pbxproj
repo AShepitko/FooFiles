@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		CD42695B9E5E3E79BD32DFE6 /* Pods_FooFiles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19DAFE86F9196DE669451BBE /* Pods_FooFiles.framework */; };
 		E6ADAB7E2019F7D800BB503F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADAB7D2019F7D800BB503F /* AppDelegate.swift */; };
-		E6ADAB802019F7D800BB503F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADAB7F2019F7D800BB503F /* ViewController.swift */; };
 		E6ADAB832019F7D800BB503F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6ADAB812019F7D800BB503F /* Main.storyboard */; };
 		E6ADAB862019F7D800BB503F /* FooFiles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6ADAB842019F7D800BB503F /* FooFiles.xcdatamodeld */; };
 		E6ADAB882019F7D800BB503F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6ADAB872019F7D800BB503F /* Assets.xcassets */; };
 		E6ADAB8B2019F7D800BB503F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6ADAB892019F7D800BB503F /* LaunchScreen.storyboard */; };
+		E6EA1078201F6C2D0035349B /* RxReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA1077201F6C2D0035349B /* RxReachability.swift */; };
+		E6F2CA62201F52B400B0331C /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2CA61201F52B400B0331C /* FilesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +22,13 @@
 		2B3F14BE5B454B53E4109BCB /* Pods-FooFiles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FooFiles.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FooFiles/Pods-FooFiles.debug.xcconfig"; sourceTree = "<group>"; };
 		E6ADAB7A2019F7D800BB503F /* FooFiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FooFiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6ADAB7D2019F7D800BB503F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6ADAB7F2019F7D800BB503F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E6ADAB822019F7D800BB503F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6ADAB852019F7D800BB503F /* FooFiles.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FooFiles.xcdatamodel; sourceTree = "<group>"; };
 		E6ADAB872019F7D800BB503F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6ADAB8A2019F7D800BB503F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6ADAB8C2019F7D800BB503F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6EA1077201F6C2D0035349B /* RxReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReachability.swift; sourceTree = "<group>"; };
+		E6F2CA61201F52B400B0331C /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		F11CED2AF132A94F62E46848 /* Pods-FooFiles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FooFiles.release.xcconfig"; path = "Pods/Target Support Files/Pods-FooFiles/Pods-FooFiles.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +53,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E666F9A2201F411D00DB30EC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E6EA1077201F6C2D0035349B /* RxReachability.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		E6ADAB712019F7D800BB503F = {
 			isa = PBXGroup;
 			children = (
@@ -72,8 +82,9 @@
 		E6ADAB7C2019F7D800BB503F /* FooFiles */ = {
 			isa = PBXGroup;
 			children = (
+				E6F2CA60201F528300B0331C /* ViewControllers */,
+				E666F9A2201F411D00DB30EC /* Managers */,
 				E6ADAB7D2019F7D800BB503F /* AppDelegate.swift */,
-				E6ADAB7F2019F7D800BB503F /* ViewController.swift */,
 				E6ADAB812019F7D800BB503F /* Main.storyboard */,
 				E6ADAB872019F7D800BB503F /* Assets.xcassets */,
 				E6ADAB892019F7D800BB503F /* LaunchScreen.storyboard */,
@@ -81,6 +92,14 @@
 				E6ADAB842019F7D800BB503F /* FooFiles.xcdatamodeld */,
 			);
 			path = FooFiles;
+			sourceTree = "<group>";
+		};
+		E6F2CA60201F528300B0331C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2CA61201F52B400B0331C /* FilesViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		FE54FCCD9C2936021B1B0E22 /* Frameworks */ = {
@@ -203,6 +222,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FooFiles/Pods-FooFiles-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -210,6 +230,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -226,9 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6ADAB802019F7D800BB503F /* ViewController.swift in Sources */,
 				E6ADAB862019F7D800BB503F /* FooFiles.xcdatamodeld in Sources */,
 				E6ADAB7E2019F7D800BB503F /* AppDelegate.swift in Sources */,
+				E6F2CA62201F52B400B0331C /* FilesViewController.swift in Sources */,
+				E6EA1078201F6C2D0035349B /* RxReachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
