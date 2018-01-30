@@ -18,6 +18,19 @@ class FilesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let filenames = [ "1.txt", "2.txt", "3.txt" ]
+        for filename in filenames {
+            DatabaseManager.shared.fetchFile(with: filename)
+                .filter { $0 == nil }
+                .map { _ in
+                    File(id: filename, remoteUrl: nil, localUrl: nil, name: filename, created: Date())
+                }
+                .flatMap { DatabaseManager.shared.createOrUpdate(entity: $0) }
+                .subscribe(onNext: { file in
+                    print("Created file: \(file.id) - \(file.created!)")
+                })
+                .disposed(by: disposeBag)
+        }
 
         if !RxReachability.shared.startMonitor(host: "distillery.com") {
             print("Unable to start monitoring Distillery host")

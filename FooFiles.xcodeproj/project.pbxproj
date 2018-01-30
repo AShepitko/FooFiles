@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CD42695B9E5E3E79BD32DFE6 /* Pods_FooFiles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19DAFE86F9196DE669451BBE /* Pods_FooFiles.framework */; };
+		E698175F20207091005D5E52 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698175D20207091005D5E52 /* File.swift */; };
+		E698176020207091005D5E52 /* File+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698175E20207091005D5E52 /* File+Extension.swift */; };
+		E6981763202072C8005D5E52 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6981762202072C8005D5E52 /* DatabaseManager.swift */; };
 		E6ADAB7E2019F7D800BB503F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADAB7D2019F7D800BB503F /* AppDelegate.swift */; };
 		E6ADAB832019F7D800BB503F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6ADAB812019F7D800BB503F /* Main.storyboard */; };
 		E6ADAB862019F7D800BB503F /* FooFiles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6ADAB842019F7D800BB503F /* FooFiles.xcdatamodeld */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		19DAFE86F9196DE669451BBE /* Pods_FooFiles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FooFiles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3F14BE5B454B53E4109BCB /* Pods-FooFiles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FooFiles.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FooFiles/Pods-FooFiles.debug.xcconfig"; sourceTree = "<group>"; };
+		E698175D20207091005D5E52 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		E698175E20207091005D5E52 /* File+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File+Extension.swift"; sourceTree = "<group>"; };
+		E6981762202072C8005D5E52 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		E6ADAB7A2019F7D800BB503F /* FooFiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FooFiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6ADAB7D2019F7D800BB503F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6ADAB822019F7D800BB503F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,8 +63,19 @@
 			isa = PBXGroup;
 			children = (
 				E6EA1077201F6C2D0035349B /* RxReachability.swift */,
+				E6981762202072C8005D5E52 /* DatabaseManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		E6981761202070A4005D5E52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E698175D20207091005D5E52 /* File.swift */,
+				E698175E20207091005D5E52 /* File+Extension.swift */,
+			);
+			name = Models;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E6ADAB712019F7D800BB503F = {
@@ -82,6 +99,7 @@
 		E6ADAB7C2019F7D800BB503F /* FooFiles */ = {
 			isa = PBXGroup;
 			children = (
+				E6981761202070A4005D5E52 /* Models */,
 				E6F2CA60201F528300B0331C /* ViewControllers */,
 				E666F9A2201F411D00DB30EC /* Managers */,
 				E6ADAB7D2019F7D800BB503F /* AppDelegate.swift */,
@@ -224,6 +242,7 @@
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCoreData/RxCoreData.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -232,6 +251,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCoreData.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -248,9 +268,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6ADAB862019F7D800BB503F /* FooFiles.xcdatamodeld in Sources */,
+				E698176020207091005D5E52 /* File+Extension.swift in Sources */,
 				E6ADAB7E2019F7D800BB503F /* AppDelegate.swift in Sources */,
 				E6F2CA62201F52B400B0331C /* FilesViewController.swift in Sources */,
 				E6EA1078201F6C2D0035349B /* RxReachability.swift in Sources */,
+				E698175F20207091005D5E52 /* File.swift in Sources */,
+				E6981763202072C8005D5E52 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
