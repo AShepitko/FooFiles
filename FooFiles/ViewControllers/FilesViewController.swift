@@ -29,4 +29,8 @@ class FilesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func crashButtonTapped(_ sender: Any) {
+        let viewController = UIViewController(nibName: "MissingViewControler", bundle: nil)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

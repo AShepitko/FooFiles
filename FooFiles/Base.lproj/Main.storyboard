@@ -51,7 +51,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mJr-hh-g82"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Kj1-6b-l4D"/>
+                    <navigationItem key="navigationItem" id="Kj1-6b-l4D">
+                        <barButtonItem key="rightBarButtonItem" title="Crash" id="qvf-rp-KvS">
+                            <connections>
+                                <action selector="crashButtonTapped:" destination="ISj-0d-n79" id="1WD-Gv-abE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7u-fz-oGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
